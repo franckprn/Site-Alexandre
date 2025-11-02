@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/home/CTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Zap, Home, Wifi, Wind, Phone as PhoneIcon, Shield, CheckCircle2 } from "lucide-react";
 import serviceDep from "@/assets/service-depannage.jpg";
 import serviceInst from "@/assets/service-installation.jpg";
@@ -84,7 +84,7 @@ const Services = () => {
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img 
-                      src={service.image} 
+                      src={service.image.src} 
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
@@ -120,7 +120,7 @@ const Services = () => {
                   <p className="text-muted-foreground mb-6">
                     Contactez-nous pour un devis gratuit et sans engagement sous 24h
                   </p>
-                  <Link to="/contact">
+                  <Link href="/contact">
                     <Button size="lg" className="bg-gradient-hero font-semibold">
                       Demander un devis gratuit
                     </Button>
