@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Zap, Home, Wifi, Wind, Phone as PhoneIcon, Shield } from "lucide-react";
+import { Zap, Home, Wifi, Wind, Phone as PhoneIcon, Shield, ArrowRight } from "lucide-react";
 import serviceDep from "@/assets/service-depannage.jpg";
 import serviceInst from "@/assets/service-installation.jpg";
 import serviceDomo from "@/assets/service-domotique.jpg";
@@ -93,8 +93,9 @@ const Services = () => {
 
         <div className="text-center">
           <Link href="/services">
-            <Button size="lg" variant="default" className="bg-gradient-hero font-semibold px-8 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
+            <Button size="lg" variant="default" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center gap-2">
               Voir tous nos services
+              <ArrowRight className="h-5 w-5" />
             </Button>
           </Link>
         </div>

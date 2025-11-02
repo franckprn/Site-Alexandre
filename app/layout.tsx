@@ -10,6 +10,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Alexandre Magalhaes - Électricien à Toulouse',
   description: "Électricien professionnel à Toulouse. Dépannage 7j/7, installation, rénovation. Intervention rapide à Ramonville et alentours.",
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Alexandre Magalhaes - Électricien à Toulouse',
     description: "Dépannage électrique, installation, rénovation. Intervention rapide.",
