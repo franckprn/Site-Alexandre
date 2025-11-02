@@ -114,11 +114,11 @@ const Realisations = () => {
                   key={index}
                   className="group overflow-hidden hover:shadow-hover transition-all duration-300 cursor-pointer animate-fade-in-up border-2"
                   style={{ animationDelay: `${index * 100}ms` }}
-                  onClick={() => setSelectedImage(project.image)}
+                  onClick={() => setSelectedImage(project.image.src)}
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img
-                      src={project.image}
+                      src={project.image.src}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
