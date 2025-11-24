@@ -5,35 +5,31 @@ import { Card, CardContent } from '@/src/components/ui/card'
 import { Button } from '@/src/components/ui/button'
 import { Dialog, DialogContent } from '@/src/components/ui/dialog'
 import PageHero from '@/components/PageHero'
-import realisation1 from '@/src/assets/realisation-1.jpg'
-import realisation2 from '@/src/assets/realisation-2.jpg'
 import realisation3 from '@/src/assets/realisation-3.jpg'
-import realisation4 from '@/src/assets/realisation-4.jpg'
-import realisation5 from '@/src/assets/realisation-5.jpg'
-import realisation6 from '@/src/assets/realisation-6.jpg'
 
 export default function RealisationsPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [selectedImages, setSelectedImages] = useState<string[] | null>(null)
   const [filter, setFilter] = useState('all')
 
   const projects = [
-    { category: 'installation', title: 'Installation électrique complète', location: 'Toulouse Centre', year: '2024', description: "Mise aux normes complète avec nouveau tableau électrique", image: realisation1 },
-    { category: 'domotique', title: 'Système domotique intelligent', location: 'Colomiers', year: '2024', description: "Installation domotique complète avec contrôle de l'éclairage et du chauffage", image: realisation2 },
-    { category: 'climatisation', title: 'Installation climatisation', location: 'Blagnac', year: '2023', description: "Installation d'une climatisation réversible multi-split", image: realisation3 },
-    { category: 'renovation', title: "Dépannage électrique d'urgence", location: 'Toulouse Sud', year: '2024', description: 'Intervention rapide pour diagnostic et réparation', image: realisation4 },
-    { category: 'installation', title: 'Installation fibre optique', location: 'Tournefeuille', year: '2023', description: 'Installation complète de réseau et fibre optique', image: realisation5 },
-    { category: 'renovation', title: 'Mise aux normes électriques', location: 'Ramonville', year: '2024', description: 'Mise en conformité électrique complète avec certification', image: realisation6 },
+    { category: 'climatisation', title: 'Installation climatisation', location: 'Blagnac', year: '2023', description: "Installation d'une climatisation réversible multi-split", images: [realisation3] },
+    { category: 'installation', title: 'Pose de luminaire', location: 'Ramonville', year: '2024', description: "Installation de luminaires modernes pour un éclairage optimal", images: ['/luminaire.jpeg', '/luminaire2.jpeg'] },
+    { category: 'maintenance', title: 'Maintenance de compteur électrique', location: 'Castanet-Tolosan', year: '2025', description: "Maintenance et remplacement de compteur électrique", images: ['/compteur avant.jpeg', '/compteur après.jpeg'] },
+    { category: 'installation', title: 'Pose de luminaire', location: 'Vieille-Toulouse', year: '2025', description: "Installation de luminaire design pour éclairage intérieur", images: ['/luminaire3.jpeg'] },
+    { category: 'installation', title: 'Installation électrique complète', location: 'Toulouse', year: '2024', description: "Installation électrique complète pour rénovation", images: ['/travaux.jpeg'] },
+    { category: 'installation', title: "Installation électrique d'une cuisine neuve", location: 'Toulouse', year: '2025', description: "Installation électrique complète pour une cuisine neuve", images: ['/cuisine.jpeg'] },
   ]
 
   const categories = [
     { id: 'all', label: 'Tous les projets' },
-    { id: 'renovation', label: 'Rénovation' },
     { id: 'installation', label: 'Installation' },
-    { id: 'domotique', label: 'Domotique' },
     { id: 'climatisation', label: 'Climatisation' },
+    { id: 'maintenance', label: 'Maintenance' },
   ]
 
-  const filteredProjects = filter === 'all' ? projects : projects.filter((p) => p.category === filter)
+  // Trier par année décroissante (plus récent en premier)
+  const sortedProjects = [...projects].sort((a, b) => parseInt(b.year) - parseInt(a.year))
+  const filteredProjects = filter === 'all' ? sortedProjects : sortedProjects.filter((p) => p.category === filter)
 
   return (
     <div className="min-h-screen pt-20">
@@ -54,31 +50,58 @@ export default function RealisationsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2" onClick={() => setSelectedImage(project.image.src)}>
-                <div className="relative h-64 overflow-hidden">
-                  <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{project.location}</span>
-                    <span>{project.year}</span>
+            {filteredProjects.map((project, index) => {
+              const imageSources = project.images.map(img => typeof img === 'string' ? img : img.src)
+              const hasTwoImages = project.images.length === 2
+              
+              return (
+                <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2" onClick={() => setSelectedImages(imageSources)}>
+                  <div className={`relative h-64 overflow-hidden ${hasTwoImages ? 'grid grid-cols-2 gap-0' : ''}`}>
+                    {hasTwoImages ? (
+                      <>
+                        <div className="relative overflow-hidden">
+                          <Image src={imageSources[0]} alt={`${project.title} - Photo 1`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div className="relative overflow-hidden">
+                          <Image src={imageSources[1]} alt={`${project.title} - Photo 2`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <Image src={imageSources[0]} alt={project.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </>
+                    )}
+                    {project.images.length > 2 && (
+                      <div className="absolute top-2 right-2 bg-background/80 px-2 py-1 rounded-full text-xs font-semibold z-10">
+                        {project.images.length} photos
+                      </div>
+                    )}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{project.title}</h3>
+                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                      <span>{project.location}</span>
+                      <span>{project.year}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+      <Dialog open={!!selectedImages} onOpenChange={() => setSelectedImages(null)}>
         <DialogContent className="max-w-4xl">
-          {selectedImage && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={selectedImage} alt="Réalisation agrandie" className="w-full h-auto rounded-lg" />
+          {selectedImages && (
+            <div className="space-y-4">
+              {selectedImages.map((img, idx) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={idx} src={img} alt={`Réalisation ${idx + 1}`} className="w-full h-auto rounded-lg" />
+              ))}
+            </div>
           )}
         </DialogContent>
       </Dialog>

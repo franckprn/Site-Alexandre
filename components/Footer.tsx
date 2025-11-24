@@ -49,29 +49,39 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-muted-foreground text-sm">
-                <Phone className="h-4 w-4 mt-0.5 text-accent" />
+                <Phone className="h-4 w-4 mt-0.5" style={{ color: '#F59E0B' }} />
                 <a href="tel:+33603442495" className="hover:text-primary transition-colors">06 03 44 24 95</a>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground text-sm">
-                <Mail className="h-4 w-4 mt-0.5 text-accent" />
-                <a href="mailto:contact@alexandre-electricien.fr" className="hover:text-primary transition-colors">
-                  contact@alexandre-electricien.fr
+                <Mail className="h-4 w-4 mt-0.5" style={{ color: '#F59E0B' }} />
+                <a href="mailto:rdielectricite@laposte.net" className="hover:text-primary transition-colors">
+                  rdielectricite@laposte.net
                 </a>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground text-sm">
-                <MapPin className="h-4 w-4 mt-0.5 text-accent" />
+                <MapPin className="h-4 w-4 mt-0.5" style={{ color: '#F59E0B' }} />
                 <span>Toulouse et alentours (31)</span>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground text-sm">
-                <Clock className="h-4 w-4 mt-0.5 text-accent" />
+                <Clock className="h-4 w-4 mt-0.5" style={{ color: '#F59E0B' }} />
                 <span>Lun-Dim: 7h30-19h30</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear} Alexandre Magalhaes - Électricien Toulouse. Tous droits réservés.</p>
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
+            <p>&copy; {currentYear} Alexandre Magalhaes - Électricien Toulouse. Tous droits réservés.</p>
+            <div className="flex gap-4 mt-4 md:mt-0">
+              <Link href="/mentions-legales" className="text-gray-400 hover:text-gray-600 hover:underline transition-colors">
+                Mentions légales
+              </Link>
+              <Link href="/confidentialite" className="text-gray-400 hover:text-gray-600 hover:underline transition-colors">
+                Politique de confidentialité
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

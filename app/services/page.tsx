@@ -27,7 +27,7 @@ export default function ServicesPage() {
     { icon: Zap, title: 'Électricité générale & dépannage', description: "Intervention rapide pour tous vos problèmes électriques : pannes, courts-circuits, disjoncteurs qui sautent, prises défectueuses.", features: ['Dépannage urgent 7j/7', 'Recherche de panne', 'Réparation tableau électrique', 'Remplacement disjoncteurs'], image: serviceDep },
     { icon: Home, title: 'Installation & rénovation', description: "Installation électrique complète pour construction neuve, rénovation ou extension. Mise aux normes NF C 15-100.", features: ['Installation neuve', 'Rénovation complète', 'Extension électrique', 'Mise aux normes'], image: serviceInst },
     { icon: Wifi, title: 'Domotique & automatisation', description: "Transformez votre maison en habitat intelligent avec des solutions domotiques sur mesure pour plus de confort et d'économies.", features: ['Éclairage connecté', 'Chauffage intelligent', 'Volets automatisés', 'Contrôle à distance'], image: serviceDomo },
-    { icon: Wind, title: 'Climatisation & chauffage', description: "Installation, entretien et dépannage de systèmes de climatisation et de chauffage électrique pour votre confort toute l'année.", features: ['Climatisation réversible', 'Pompe à chaleur', 'Chauffage électrique', 'Maintenance annuelle'], image: serviceClim },
+    { icon: Wind, title: 'Climatisation et volets roulants', description: "Installation, entretien et dépannage de systèmes de climatisation et motorisation de volets roulants pour votre confort toute l'année.", features: ['Climatisation réversible', 'Motorisation de volets roulants', 'Installation et entretien', 'Maintenance annuelle'], image: serviceClim },
     { icon: PhoneIcon, title: 'Courant faible', description: "Installation de systèmes de communication et de sécurité : interphone, vidéophone, réseau informatique, fibre optique.", features: ['Interphone vidéo', 'Réseau informatique', 'Fibre optique', 'Téléphonie'], image: serviceCourant },
     { icon: Shield, title: 'Diagnostic & conformité', description: "Diagnostic électrique obligatoire pour la vente ou la location, mise en conformité et conseils personnalisés.", features: ['Diagnostic obligatoire', 'Mise en conformité', 'Certificat Consuel', 'Conseils sécurité'], image: serviceConf },
   ]
@@ -46,7 +46,7 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <Card key={index} className="group bg-gradient-to-br from-blue-50 to-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-blue-100 overflow-hidden">
                 <div className="relative h-64 overflow-hidden">
-                  <Image src={service.image} alt={service.title} fill className="object-cover group-hover:scale-110 transition-transform duration-300" />
+                  <Image src={service.image} alt={`Électricien Ramonville - ${service.title}`} fill className="object-cover group-hover:scale-110 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center">
                     <service.icon className="h-8 w-8" />
@@ -83,13 +83,13 @@ export default function ServicesPage() {
               <p className="text-xl mb-8 text-blue-100">Contactez-nous pour un devis gratuit et sans engagement sous 24h</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a href="tel:+33603442495">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
                     <Phone className="mr-2 h-5 w-5" />
                     06 03 44 24 95
                   </Button>
                 </a>
                 <Link href="/contact">
-                  <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-100 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                  <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
                     Demander un devis
                   </Button>
                 </Link>

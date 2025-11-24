@@ -1,6 +1,5 @@
 import { Award, Users, Clock, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 
 const About = () => {
   const features = [
@@ -21,8 +20,8 @@ const About = () => {
     },
     {
       icon: Shield,
-      title: "Garantie & Assurance",
-      description: "Tous nos travaux sont garantis et assurés pour votre tranquillité",
+      title: "Garantie décennale et assurance de responsabilité civile",
+      description: "Tous nos travaux sont couverts par une garantie décennale et une assurance de responsabilité civile pour votre tranquillité",
     },
   ];
 
@@ -38,7 +37,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="max-w-4xl mx-auto mb-16">
           <div className="animate-fade-in-up">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Une passion devenue métier
@@ -57,15 +56,6 @@ const About = () => {
               aux normes en vigueur, tout en vous offrant un service personnalisé et des conseils adaptés 
               à votre projet.
             </p>
-          </div>
-
-          <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-            <Image
-              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80"
-              alt="Électricien au travail"
-              fill
-              className="object-cover"
-            />
           </div>
         </div>
 

@@ -20,13 +20,13 @@ const CTA = () => {
         <p className="text-xl mb-8 text-blue-100">Contactez-nous pour un devis gratuit et sans engagement sous 24h</p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a href="tel:+33603442495">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
               <Phone className="mr-2 h-5 w-5" />
               06 03 44 24 95
             </Button>
           </a>
           <Link href="/contact">
-            <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-100 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
+            <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg">
               <MessageSquare className="mr-2 h-5 w-5" />
               Demander un devis
             </Button>

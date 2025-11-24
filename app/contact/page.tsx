@@ -25,8 +25,14 @@ export default function ContactPage() {
 
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="space-y-8">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div>
+              <Card className="bg-white shadow-2xl rounded-2xl border-0">
+                <ContactForm />
+              </Card>
+            </div>
+
+            <div>
               <Card className="bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-2xl">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold mb-6">Informations de contact</h2>
@@ -46,7 +52,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email</h3>
-                        <a href="mailto:contact@alexandre-electricien.fr" className="text-white/90 hover:text-white transition-colors">contact@alexandre-electricien.fr</a>
+                        <a href="mailto:rdielectricite@laposte.net" className="text-white/90 hover:text-white transition-colors">rdielectricite@laposte.net</a>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -55,7 +61,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Zone d'intervention</h3>
-                        <p className="text-white/90">Toulouse et ses alentours<br /> (Haute-Garonne - 31)</p>
+                        <p className="text-white/90">Ramonville-Saint-Agne et agglomération toulousaine sud</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -69,22 +75,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-
-              <Card className="bg-blue-50 border-l-4 border-blue-500 shadow-2xl">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <Clock className="h-6 w-6 text-blue-600 mr-3" />
-                    <h3 className="text-xl font-bold text-blue-900">Temps de réponse</h3>
-                  </div>
-                  <p className="text-gray-700">Nous vous répondons sous <strong>24h maximum</strong>. Pour les urgences, n'hésitez pas à nous appeler directement au 06 03 44 24 95</p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div>
-              <Card className="bg-white shadow-2xl rounded-2xl border-0">
-                <ContactForm />
               </Card>
             </div>
           </div>

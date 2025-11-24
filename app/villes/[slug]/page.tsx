@@ -87,11 +87,11 @@ export default function VillePage({ params }: { params: { slug: string } }) {
             Intervention rapide en {city.time} • Devis gratuit • 15 ans d'expérience
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold px-8 py-4 rounded-full">
               <Phone className="mr-2 h-5 w-5" />
               06 03 44 24 95
             </Button>
-            <Button size="lg" variant="outline" className="bg-white text-blue-800 hover:bg-gray-100">
+            <Button size="lg" variant="outline" className="bg-white text-blue-800 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-full">
               Devis gratuit
             </Button>
           </div>
@@ -232,7 +232,7 @@ export default function VillePage({ params }: { params: { slug: string } }) {
           <p className="text-xl mb-8 text-blue-100">
             Appelez-nous maintenant, nous intervenons en {city.time}
           </p>
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
+          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold px-8 py-4 rounded-full">
             <Phone className="mr-2 h-5 w-5" />
             06 03 44 24 95
           </Button>

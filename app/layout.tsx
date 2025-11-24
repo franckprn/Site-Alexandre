@@ -34,33 +34,6 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Alexandre Magalhaes Électricien",
-            "image": "https://electricienramonville.fr/logo.png",
-            "telephone": "+33603442495",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Ramonville-Saint-Agne",
-              "addressLocality": "Ramonville-Saint-Agne",
-              "postalCode": "31520",
-              "addressCountry": "FR"
-            },
-            "areaServed": [
-              "Ramonville-Saint-Agne", "Auzeville-Tolosane", "Castanet-Tolosan",
-              "Labège", "Lacroix-Falgarde", "Mervilla", "Pechbusque", 
-              "Rebigue", "Vigoulet-Auzil", "Toulouse"
-            ],
-            "priceRange": "€€",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "127"
-            }
-          })
-        }} />
         </Providers>
       </body>
     </html>

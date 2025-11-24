@@ -32,8 +32,8 @@ const Services = () => {
     },
     {
       icon: Wind,
-      title: "Climatisation",
-      description: "Installation et entretien de systèmes de climatisation",
+      title: "Climatisation et volets roulants",
+      description: "Installation et entretien de systèmes de climatisation et motorisation de volets roulants",
       image: serviceClim,
     },
     {
@@ -72,7 +72,7 @@ const Services = () => {
               <div className="relative h-48 overflow-hidden">
                 <Image 
                   src={service.image}
-                  alt={service.title}
+                  alt={`Électricien Ramonville - ${service.title}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
@@ -93,7 +93,7 @@ const Services = () => {
 
         <div className="text-center">
           <Link href="/services">
-            <Button size="lg" variant="default" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center gap-2">
+            <Button size="lg" variant="default" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 text-lg rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center gap-2 mx-auto">
               Voir tous nos services
               <ArrowRight className="h-5 w-5" />
             </Button>

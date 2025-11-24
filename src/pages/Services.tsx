@@ -37,9 +37,9 @@ const Services = () => {
     },
     {
       icon: Wind,
-      title: "Climatisation & chauffage",
-      description: "Installation, entretien et dépannage de systèmes de climatisation et de chauffage électrique pour votre confort toute l'année.",
-      features: ["Climatisation réversible", "Pompe à chaleur", "Chauffage électrique", "Maintenance annuelle"],
+      title: "Climatisation et volets roulants",
+      description: "Installation, entretien et dépannage de systèmes de climatisation et motorisation de volets roulants pour votre confort toute l'année.",
+      features: ["Climatisation réversible", "Motorisation de volets roulants", "Installation et entretien", "Maintenance annuelle"],
       image: serviceClim,
     },
     {
@@ -121,7 +121,7 @@ const Services = () => {
                     Contactez-nous pour un devis gratuit et sans engagement sous 24h
                   </p>
                   <Link href="/contact">
-                    <Button size="lg" className="bg-gradient-hero font-semibold">
+                    <Button size="lg" className="bg-gradient-hero font-semibold text-lg px-8 py-4">
                       Demander un devis gratuit
                     </Button>
                   </Link>

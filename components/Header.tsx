@@ -29,13 +29,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-card">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-12 md:h-20">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">AM</span>
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-sm md:text-xl">AM</span>
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-xl text-gray-900">Alexandre Magalhaes</span>
+              <span className="font-bold text-lg md:text-xl text-gray-900">Alexandre Magalhaes</span>
               <p className="text-xs text-gray-600">Électricien à Toulouse</p>
             </div>
           </Link>
@@ -69,17 +69,17 @@ export default function Header() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-gray-900 hover:text-primary transition-colors"
+              className="lg:hidden p-1 text-gray-900 hover:text-primary transition-colors"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 animate-fade-in">
-            <nav className="flex flex-col space-y-4">
+          <div className="lg:hidden py-2 animate-fade-in">
+            <nav className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
