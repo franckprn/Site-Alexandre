@@ -20,6 +20,7 @@ export default function Header() {
     { name: "Accueil", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Réalisations", path: "/realisations" },
+    { name: "Zone d'intervention", path: "/zone-intervention" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ]

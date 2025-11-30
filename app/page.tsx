@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Hero from '@/components/home/Hero'
 import Services from '@/components/home/Services'
-import Testimonials from '@/components/home/Testimonials'
+import Avis from '@/components/home/Avis'
 import About from '@/components/home/About'
 import ZoneIntervention from '@/components/home/ZoneIntervention'
 import CTA from '@/components/home/CTA'
@@ -26,25 +26,49 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Electrician",
-            "name": "Alexandre Magalhães - Électricien",
+            "name": "Alexandre Magalhaes - Électricien Ramonville",
+            "image": "https://www.electricienramonville.fr/logo.jpg",
             "telephone": "+33603442495",
-            "email": "rdielectricite@laposte.net",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Ramonville-Saint-Agne",
               "postalCode": "31520",
               "addressCountry": "FR"
             },
-            "areaServed": ["Ramonville-Saint-Agne", "Castanet-Tolosan", "Labège", "Auzeville-Tolosane", "Escalquens", "Péchabou", "Vieille-Toulouse", "Quint-Fonsegrives", "Balma"],
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 43.5447,
+              "longitude": 1.4783
+            },
+            "url": "https://www.electricienramonville.fr",
             "priceRange": "€€",
-            "openingHours": "Mo-Su 00:00-23:59",
-            "sameAs": ["https://www.facebook.com/profile.php?id=100091819618346"]
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "07:00",
+                "closes": "19:00"
+              }
+            ],
+            "areaServed": [
+              {"@type": "City", "name": "Ramonville-Saint-Agne"},
+              {"@type": "City", "name": "Labège"},
+              {"@type": "City", "name": "Castanet-Tolosan"},
+              {"@type": "City", "name": "Auzeville-Tolosane"},
+              {"@type": "City", "name": "Escalquens"},
+              {"@type": "City", "name": "Mervilla"},
+              {"@type": "City", "name": "Pechbusque"},
+              {"@type": "City", "name": "Vieille-Toulouse"},
+              {"@type": "City", "name": "Lacroix-Falgarde"},
+              {"@type": "City", "name": "Saint-Orens-de-Gameville"}
+            ],
+            "sameAs": ["https://share.google/ynUMQHoTRzDkJcIKD"]
           })
         }}
       />
       <Hero />
       <Services />
-      <Testimonials />
+      <Avis />
       <About />
       <ZoneIntervention />
       <CTA />

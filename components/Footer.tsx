@@ -73,7 +73,15 @@ export default function Footer() {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
             <p>&copy; {currentYear} Alexandre Magalhaes - Électricien Toulouse. Tous droits réservés.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
+            <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
+              <a 
+                href="https://share.google/ynUMQHoTRzDkJcIKD" 
+                target="_blank" 
+                rel="noopener" 
+                className="text-gray-400 hover:text-gray-600 hover:underline transition-colors"
+              >
+                ⭐ Voir nos avis Google
+              </a>
               <Link href="/mentions-legales" className="text-gray-400 hover:text-gray-600 hover:underline transition-colors">
                 Mentions légales
               </Link>
